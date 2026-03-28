@@ -1,5 +1,8 @@
 # mini-message-board
 
+![mini borad app](./public/Screenshot%202026-03-28%20at%207.04.19%20PM.png)
+
+
 This is a basic Express app, using Express and EJS. 
 
 We have 2 routes, the index ("/") and a “new message” form ("/new").
