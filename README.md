@@ -10,7 +10,9 @@ Css for style with linking public folder in app.js
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
-Next let’s set up the new message form. In the router add a router.get() for the "/new" route and point it to a template named "form". In the views directory create your form template. Add a heading, 2 inputs (one for the author’s name and one for the message text) and a submit button. To have the form make a network request you will need to define it with both a method and an action like so (we will learn how to handle forms in a later lesson):
+We have a new message form. In the router showing router.get() for the "/new" route and pointing to a template named "form". 
+
+Template form has a heading, 2 inputs (one for the author’s name and one for the message text), a submit button and a link to go back to msg. To have the form make a network request you will need to define it with both a method and an action like so (we will learn how to handle forms in a later lesson):
 
 <form method="POST" action="/new">
    put your inputs and buttons in here!

@@ -12,7 +12,9 @@ router.get("/", (req, res) =>
     res.render("index", { messages: messages , title: "Mini Message board"}));
 
 
-router.get("/new", (req, res) =>res.send("Welcome to the new page")); 
+router.get("/new", (req, res) =>
+    
+    res.render("form", { title: "New Message" }));
 
 
  
