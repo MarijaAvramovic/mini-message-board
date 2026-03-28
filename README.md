@@ -23,7 +23,4 @@ In order to get and use the data from users form, used req.body. The individual 
 In the router.post() text and name submission being pushed into the messages array
 At the end of the router.post() we have res.redirect("/") to send users back to the index page after submitting a new message.
 
-At this point, you should be able to visit /new (it might be a good idea to add a link to that route on your index page), fill out the form, submit it and then see it show up on the index page!
-Add an “open” button or link next to every message to open a new page with the message details.
-Push your project to GitHub.
-You’ll learn how to deploy your app to the web in the next lesson, don’t forget to come back and submit it to the submissions below once you’re done!
+On “open” button go to open a new page with the message details. Updated index.ejs, added messageDetails.ejs added style. 

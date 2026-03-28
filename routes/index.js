@@ -29,7 +29,16 @@ const messages = [
 router.get("/", (req, res) => 
     
     res.render("index", { messages: messages , title: "Mini Message board"}));
+router.get("/message/:id", (req, res) => {
+  const messageId = parseInt(req.params.id);
+  const message = messages.find((msg) => msg.id === messageId);
 
+  if (message) {
+    res.render("messageDetails", { message: message, title: "Message Details" });
+  } else {
+    res.status(404).send("Message not found");
+  }
+});
 
 router.get("/new", 
 (req, res) => res.render("form", { title: "New Message" })); 
