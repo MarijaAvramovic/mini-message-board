@@ -8,6 +8,7 @@ app.set("views", path.join(__dirname, "views"));
 const indexRouter = require("./routes/index");
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
+app.use(express.urlencoded({ extended: true }));
 
 
  

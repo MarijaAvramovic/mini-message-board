@@ -15,15 +15,14 @@ We have a new message form. In the router showing router.get() for the "/new" ro
 Template form has a heading, 2 inputs (one for the author’s name and one for the message text), a submit button and a link to go back to msg. 
 
 Added a router.post() for "/new"
+On app level included app.use(express.urlencoded({ extended: true }));
+
+In order to get and use the data from users form, used req.body. The individual fields inside the body object are named according to the name attribute on form : 1. req.body.text 2. req.body.name.  
 
 
-In order to get and use the data from your form, you will need to access the contents of your form inside router.post() as an object called req.body. The individual fields inside the body object are named according to the name attribute on your inputs (the value of <input name="messageText"> will show up as req.body.messageText inside the router.post function). For this to work as intended, you’ll need to use an app level Express middleware called express.urlencoded() to parse the form data into req.body. You can set this up by adding the following line to your app setup:
+In the router.post() text and name submission being pushed into the messages array
+At the end of the router.post() we have res.redirect("/") to send users back to the index page after submitting a new message.
 
-app.use(express.urlencoded({ extended: true }));
-In your router.post() take the contents of the form submission and push them into the messages array as an object that looks something like this:
-
-messages.push({ text: messageText, user: messageUser, added: new Date() });
-At the end of the router.post() function use res.redirect("/") to send users back to the index page after submitting a new message.
 At this point, you should be able to visit /new (it might be a good idea to add a link to that route on your index page), fill out the form, submit it and then see it show up on the index page!
 Add an “open” button or link next to every message to open a new page with the message details.
 Push your project to GitHub.

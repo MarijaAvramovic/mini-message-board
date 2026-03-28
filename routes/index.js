@@ -31,7 +31,14 @@ router.get("/new",
 (req, res) => res.render("form", { title: "New Message" })); 
 
 router.post("/new", (req, res) => {
- res.send("New message posted");
+ const {  user, text } = req.body;
+messages.push({
+    user: user,
+  text: text,
+    added: new Date(),
+  });
+  console.log(messages);
+  res.redirect("/");
 }
 );
  
