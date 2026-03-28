@@ -3,19 +3,23 @@ const router = express.Router();
 
 const messages = [
   {
+    id: 1,
     text: "Hi there!",
     user: "Amando",
     added: new Date()
   },
   {
+        id: 2,
     text: "Hello World!",
     user: "Charles",
     added: new Date()
   },
-    { text: "Hello world",
+    { id: 3,
+     text: "Hello world",
          user: "Lola", 
          added: new Date() },
-  { text: "Hi there!",
+  { id: 4,
+     text: "Hi there!",
      user: "John", 
     added: new Date() },
 ];
@@ -32,7 +36,10 @@ router.get("/new",
 
 router.post("/new", (req, res) => {
  const {  user, text } = req.body;
+ let nextId = messages.length + 1;
+
 messages.push({
+    id: nextId++,
     user: user,
   text: text,
     added: new Date(),
