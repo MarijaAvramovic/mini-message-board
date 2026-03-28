@@ -1,4 +1,14 @@
 # mini-message-board
+A simple Node.js + Express + EJS application that allows users to post messages, view them, and see individual message details. Implements a basic MVC structure with routers, controllers, and models. Messages are stored in memory (for demonstration purposes) and displayed using server-side rendering with EJS templates.
+
+Features:
+
+Add new messages via a form
+View all messages on the home page
+Open individual message details
+Professional, responsive card-based UI
+
+Tech stack: Node.js, Express, EJS, HTML/CSS
 
 ![mini borad app](./public/Screenshot%202026-03-28%20at%207.04.19%20PM.png)
 
