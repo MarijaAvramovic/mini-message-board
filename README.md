@@ -12,12 +12,11 @@ app.use(express.static(assetsPath));
 
 We have a new message form. In the router showing router.get() for the "/new" route and pointing to a template named "form". 
 
-Template form has a heading, 2 inputs (one for the author’s name and one for the message text), a submit button and a link to go back to msg. To have the form make a network request you will need to define it with both a method and an action like so (we will learn how to handle forms in a later lesson):
+Template form has a heading, 2 inputs (one for the author’s name and one for the message text), a submit button and a link to go back to msg. 
 
-<form method="POST" action="/new">
-   put your inputs and buttons in here!
-</form>
-With your form set up like this, when you click on the submit button it should send a POST request to the url specified by the action attribute, so go back to your index router and add a router.post() for "/new".
+Added a router.post() for "/new"
+
+
 In order to get and use the data from your form, you will need to access the contents of your form inside router.post() as an object called req.body. The individual fields inside the body object are named according to the name attribute on your inputs (the value of <input name="messageText"> will show up as req.body.messageText inside the router.post function). For this to work as intended, you’ll need to use an app level Express middleware called express.urlencoded() to parse the form data into req.body. You can set this up by adding the following line to your app setup:
 
 app.use(express.urlencoded({ extended: true }));
