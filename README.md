@@ -2,22 +2,14 @@
 
 This is a basic Express app, using Express and EJS. 
 
-We are going to have 2 routes, the index ("/") and a “new message” form ("/new").
-Create an array at the top of your index router called messages and put a couple of sample messages inside of it like this:
+We have 2 routes, the index ("/") and a “new message” form ("/new").
+We have an array at the top of your index router called messages available to index.ejs template.
 
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
-Next, in your index template (in the "views" folder) loop through the messages array and for each one, display the user, text and the date the message was added. Don’t forget to make your messages available to your template by including it in the res.render ‘locals’ object (e.g. res.render("index", { title: "Mini Messageboard", messages: messages })).
+In index template (in the "views" folder) by using message array we can display the user, text and the date the message was added. 
+Css for style with linking public folder in app.js 
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
+
 Next let’s set up the new message form. In the router add a router.get() for the "/new" route and point it to a template named "form". In the views directory create your form template. Add a heading, 2 inputs (one for the author’s name and one for the message text) and a submit button. To have the form make a network request you will need to define it with both a method and an action like so (we will learn how to handle forms in a later lesson):
 
 <form method="POST" action="/new">
