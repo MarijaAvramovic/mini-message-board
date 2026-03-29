@@ -4,7 +4,8 @@
   "description": "Set up a basic Express app by installing Express and EJS. Set up a basic index route and run your server. Create the required folders and files as discussed in the previous lessons. We are going to have 2 routes, the index (\"/\") and a “new message” form (\"/new\"). Create an array at the top of your index router called messages and put a couple of sample messages inside of it like this:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
