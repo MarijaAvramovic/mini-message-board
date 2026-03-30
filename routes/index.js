@@ -42,8 +42,7 @@ router.get("/message/:id", (req, res) => {
   }
 });
 
-router.get("/new", 
-(req, res) => res.render("form", { title: "New Message" })); 
+router.get("/new", messageControlers.getFormInput);
 
 router.post("/new", (req, res) => {
  const {  user, text } = req.body;
