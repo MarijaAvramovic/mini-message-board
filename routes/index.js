@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const messageControlers = require("../controllers/messagesController");
+
+
 const messages = [
   {
     id: 1,
@@ -26,9 +29,8 @@ const messages = [
 
  
 
-router.get("/", (req, res) => 
-    
-    res.render("index", { messages: messages , title: "Mini Message board"}));
+router.get("/", messageControlers.getAllMessages);
+
 router.get("/message/:id", (req, res) => {
   const messageId = parseInt(req.params.id);
   const message = messages.find((msg) => msg.id === messageId);

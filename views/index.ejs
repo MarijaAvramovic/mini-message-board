@@ -24,7 +24,7 @@
     <div class="messages">
       <% messages.forEach(message => { %>
         <div class="message">
-          <div class="user"><%= message.user %></div>
+          <div class="user"><%= message.username %></div>
           <div class="text"><%= message.text %></div>
           <div class="date"><%= message.added.toLocaleString() %></div>
           <a class="open-btn" href="/message/<%= message.id %>">Open</a>
