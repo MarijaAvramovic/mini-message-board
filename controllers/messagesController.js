@@ -22,7 +22,7 @@ function getFormInput(req, res) {
 
 async function addNewMessagePost(req, res) {
     const { user, text } = req.body;    
-    console.log(messages);
+
     try {
         await db.addNewMessage(user, text);
         res.redirect("/");
