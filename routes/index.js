@@ -4,6 +4,7 @@ const router = express.Router();
 const messageControlers = require("../controllers/messagesController");
 
 
+
 const messages = [
   {
     id: 1,
@@ -44,20 +45,10 @@ router.get("/message/:id", (req, res) => {
 
 router.get("/new", messageControlers.getFormInput);
 
-router.post("/new", (req, res) => {
- const {  user, text } = req.body;
- let nextId = messages.length + 1;
 
-messages.push({
-    id: nextId++,
-    user: user,
-  text: text,
-    added: new Date(),
-  });
-  console.log(messages);
-  res.redirect("/");
-}
-);
+
+ router.post("/new",messageControlers.addNewMessagePost);
+
  
 
 module.exports = router;
