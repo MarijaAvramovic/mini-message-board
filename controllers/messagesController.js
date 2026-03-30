@@ -32,10 +32,24 @@ async function addNewMessagePost(req, res) {
     }
 }
 
+
+
+async function getMessageById(req, res) {
+  const messageId = parseInt(req.params.id);
+ 
+   const message = await db.getMessageById(messageId);
+  if (message) {
+    res.render("messageDetails", { message: message, title: "Message Details" });
+  } else {
+    res.status(404).send("Message not found");
+  } 
+    
+};
  
 
 module.exports = {
   getAllMessages,
   getFormInput,
- addNewMessagePost
+ addNewMessagePost,
+ getMessageById
 };

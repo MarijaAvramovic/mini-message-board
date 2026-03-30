@@ -13,7 +13,17 @@ async function addNewMessage(user, text) {
  
 }
 
+
+
+ 
+
+async function getMessageById(id) {
+  const result = await pool.query("SELECT * FROM messages WHERE id = $1", [id]);
+  return result.rows[0];
+}
+
 module.exports = {
   getAllMessages,
-  addNewMessage
+  addNewMessage,
+  getMessageById
 };
