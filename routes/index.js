@@ -34,6 +34,7 @@ router.get("/", messageControlers.getAllMessages);
 
 
 router.get("/message/:id", messageControlers.getMessageById);
+router.get("/delete/:id", messageControlers.deleteMessageByIdGet);
 
 router.get("/new", messageControlers.getFormInput);
 

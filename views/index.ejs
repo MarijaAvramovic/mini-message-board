@@ -28,6 +28,7 @@
           <div class="text"><%= message.text %></div>
           <div class="date"><%= message.added.toLocaleString() %></div>
           <a class="open-btn" href="/message/<%= message.id %>">Open</a>
+          <a class="open-btn" href="/delete/<%= message.id %>">Delete</a>
         </div>
       <% }) %>
     </div>

@@ -46,10 +46,16 @@ async function getMessageById(req, res) {
     
 };
  
+async function deleteMessageByIdGet(req, res) {
+  const messageId = parseInt(req.params.id);
+  await db.deleteMessageById(messageId);
+  res.redirect("/");
+}
 
 module.exports = {
   getAllMessages,
   getFormInput,
  addNewMessagePost,
- getMessageById
+ getMessageById,
+ deleteMessageByIdGet
 };
